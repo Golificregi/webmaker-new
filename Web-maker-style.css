@@ -1,15 +1,17 @@
 .btn-dark-red {
   background-color: darkred;
   color: white;
-
-
-
-} 
+}
 
 img {
-      display: block;
-      margin: 0 auto
+  display: block;
+  margin: 0 auto;
+}
 
-  }
-button 
-<button class="btn btn-indigo btn-block">submit</button>
+body {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+label {
+  font-weight: bold;
+}
