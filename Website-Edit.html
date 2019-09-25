@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>New Website</title>
+
+    <script
+      src="https://kit.fontawesome.com/c9b2a8f4c3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="Web-maker-style.css" />
+  </head>
+  <body>
+      <nav class="navbar navbar-dark bg-primary fixed-top row">
+          <!--left Navbar-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="navbar">
+              <div>
+                <a class="text-light" href="websiteList.html"
+                  ><i class="fas fa-chevron-left"></i
+                ></a>
+                <span class="navbar-brand mb-0 h1 ml-4">Websites</span>
+              </div>
+              <a class="text-light" href="websiteNew.html"
+                ><i class="fas fa-plus"></i
+              ></a>
+            </div>
+          </div>
+          <!--right navbar-->
+          <div class="col-lg-9 navbar">
+            <div>
+              <a class="text-light d-lg-none" href="websiteList.html"
+                ><i class="fas fa-chevron-left"></i
+              ></a>
+              <span class="navbar-brand mb-0 h1 ml-4">Websites New</span>
+            </div>
+            <a class="text-light" href="websiteList.html"
+              ><i class="fas fa-check"></i
+            ></a>
+          </div>
+        </nav>
+        <div class="row mt-5">
+          <div class="col-lg-3 d-none d-lg-block">
+            <!---->
+            <div class="container">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a href="..page/pagelist.html">Address Book App</a>
+                      <a class="float-right" href="WebsiteEdit.html">
+                        <i class="fas fa-cog"></i>
+                      </a>
+                    </li> 
+      
+              
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a href="..page/pagelist.html">Blogger</a>
+                      <a class="float-right" href="WebsiteEdit.html">
+                        <i class="fas fa-cog"></i>
+                      </a>
+                    </li> 
+    
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <a href="..page/pagelist.html">Blogger App</a>
+                          <a class="float-right" href="WebsiteEdit.html">
+                            <i class="fas fa-cog"></i>
+                          </a>
+                        </li> 
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                              <a href="..page/pagelist.html">Script Teesting App</a>
+                              <a class="float-right" href="WebsiteEdit.html">
+                                <i class="fas fa-cog"></i>
+                              </a>
+                            </li> 
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="container">
+              <form>
+                <div class="form-group">
+                  <label for="website-name"> Website Name </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Name"
+                  />
+                </div>
+    
+                <div class="form-group">
+                  <label for="description"> description</label>
+                  <textarea
+                    type="text-area"
+                    class="form-control"
+                    id="description"
+                    placeholder=""
+                    rows="5"
+                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae atque excepturi, explicabo nobis deleniti asperiores maxime doloribus placeat ea distinctio necessitatibus corrupti molestias tempora velit illo obcaecati impedit quisquam odio?</textarea>
+
+                  
+                </div>
+                <button class="btn btn-info btn-block">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-primary fixed-bottom">
+          <span></span>
+          <a class="text-light" href="profile.html"><i class="fas fa-user"></i></a>
+        </nav>
+        <!--Stop here-->
+  </body>
+</html>
