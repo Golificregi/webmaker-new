@@ -20,3 +20,7 @@ a,
 a:hover {
   text-decoration: none;
 }
+
+.absolute-right {
+  right: 5px;
+}
