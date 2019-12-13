@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 export default function Login({ props }) {
   const [username, setUsername] = useState("");
@@ -7,19 +8,17 @@ export default function Login({ props }) {
 
   let history = useHistory();
 
-  function onSubmit(e) {
+  async function onSubmit(e) {
     e.preventDefault();
-    // props.login(username, password);
-    for (let user of props.users) {
-      // If we found the user
-      if (user.username === username && user.password === password) {
-        //  /user/:uid
-        history.push(`/user/${user._id}`);
-        return;
-      }
+    const user = await axios.get(
+      `/api/user?username=${username}&password=${password}`
+    );
+    const user = res.data;
+    if (user) {
+      history.push(`/user/${user / _id}`);
+    } else {
+      alert("Invalid Credential");
     }
-    // if we can't find user
-    alert("Invalid Credential Please Try Again.");
   }
 
   return (

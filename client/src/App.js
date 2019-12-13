@@ -82,24 +82,6 @@ function App() {
     }
   ]);
 
-  // Add a new user into users
-  const addUser = user => {
-    setUsers([...users, user]);
-  };
-
-  // update user by id
-  const updateUser = newUser => {
-    setUsers(
-      users.map(user => {
-        if (user._id === newUser._id) {
-          return newUser;
-        } else {
-          return user;
-        }
-      })
-    );
-  };
-
   // get websites by user id
   const getWebsites = uid => {
     const curWebs = [];
@@ -221,13 +203,13 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/login">
-          <Login users={users} />
+          <Login />
         </Route>
         <Route exact path="/register">
-          <Register users={users} addUser={addUser} />
+          <Register />
         </Route>
         <Route exact path="/user/:uid">
-          <Profile users={users} updateUser={updateUser} />
+          <Profile />
         </Route>
         <Route exact path="/user/:uid/website">
           <WebsiteList getWebsites={getWebsites} />
@@ -270,7 +252,7 @@ function App() {
           />
         </Route>
         <Route path="/">
-          <Login users={users} />
+          <Login />
         </Route>
       </Switch>
     </Router>
