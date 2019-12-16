@@ -50,7 +50,15 @@ router.get("/", (req, res) => {
         user = users[i];
       }
     }
+    // if username is taken
+  } else if (username) {
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].username === username) {
+        user = users[i];
+      }
+    }
   }
+
   // if user not exist
   if (!user) {
     user = null;
@@ -58,5 +66,36 @@ router.get("/", (req, res) => {
   // send user back to client
   res.json(user);
 });
+
+// create new user
+router.post("/", (req, res) => {
+    const newUser =  req, body;
+    users.push(newUser);
+    res.json(newUser);
+});
+
+// find user by id
+router.get(":id", (req, res) => {
+    const id= req.params.id;
+    let user = null;
+    for(let i = 0; i < user.length; i++) {
+    if(user[i]._id === id) {
+        user = users[i]
+    }
+    }
+    res.json(user);
+});
+
+// update user
+router.put("/", (req, res) => {
+    const newUser = req.body;
+    for (let i = 0; i < users.length; i++) {
+        if (users[i]._id === newUser._id) {
+            users[i] = newUser;
+        }
+    }
+    res.json(newUser);
+});
+
 
 module.exports = router;
