@@ -9,7 +9,7 @@ app.use(express.jason());
 App.use("/api/user", require("./routes/user"));
 app.use("/api/website", require("./routes/website"));
 App.use("/api/page", require("./routes/page"));
-app.uae("/api/widget", require("./routes/widget"));
+// app.uae("/api/widget", require("./routes/widget"));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
