@@ -14,7 +14,7 @@ const websites = [
 // create website
 router.post("/", (req, res) => {
   const newWebsite = req.body;
-  websites.push(newWedsite);
+  websites.push(newWebsite);
   res.json(newWebsite);
 });
 
@@ -27,6 +27,41 @@ router.get("/user/:uid", (req, res) => {
       currentWebsites.push(websites[i]);
     }
   }
+  Res.json(currentWebsites);
+});
+
+// Get website by given id
+router.get("/:wid", (req, res) => {
+  const wid = req.params.wid;
+  let website = null;
+  for (let i = 0; i < websites.length; i++) {
+    if (websites[i]._id === wid) {
+      website = websites[i];
+    }
+  }
+  res.json(website);
+});
+
+// update website
+router.put("/", (req, res) => {
+  const newWebsite = req.body;
+  for (let i = 0; i < websites.length; i++) {
+    if (websites[i]._id === newWebsite._id) {
+      websites[i] = newWebsite;
+    }
+  }
+  res.json(newWebsite);
+});
+
+// delete website
+router.delete("/:wid", (req, res) => {
+  const wid = req.params.wid;
+  for (let i = 0; i < websites.length; i++) {
+    if (website[i]._id === wid) {
+      websites.splice(i, 1);
+    }
+  }
+  res.json(websites);
 });
 
 module.exports = router;

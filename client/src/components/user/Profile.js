@@ -11,18 +11,7 @@ export default function Profile(props) {
 
   const params = useParams();
 
-  useEffect(() => {
-    // for (let user of props.users) {
-    //   if (user._id === useParams.uid) {
-    //     setUsername(user.username);
-    //     setEmail(user.email);
-    //     setFirstName(user.firstName);
-    //     setLastName(user.lastName);
-    //     setPassword(user.password);
-    //     return;
-    //   }
-    // }
-  }, [params.uid, props.users]);
+  useEffect(() => {}, [params.uid, props.users]);
 
   const params = useParams();
 
@@ -38,6 +27,7 @@ export default function Profile(props) {
 
   useEffect(() => {
     getUser();
+    // eslint disable next-line
   }, []);
 
   const update = async () => {
