@@ -1,7 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Axios from "axios";
 
 export default function PageList() {
+  const params = useParams();
+
+  const [pages, setPages] = useState([]);
+
+  useEffect(() => {
+    getPages();
+    // eslint-disable-next-line
+  }, []);
+
+  const getPage = async () => {
+    const res = await Axios.get(`/api/page/website/${params.wid}`);
+    setPages(req.data);
+  };
+
   return (
     <div>
       <nav className="navbar bg-light navbar-light fixed-top">

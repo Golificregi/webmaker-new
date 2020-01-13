@@ -1,7 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
+import uuid from uuid;
+import Axios from "axios";
 
-export default function PageNew() {
+export default function PageNew(props) {
+  const history = useHistory();
+  const params = useParams();
+
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+
+  const submit = async e => {
+    e.preventDefault();
+    const newPage = {
+      _id: uuid.v4()
+      name: name,
+      title: title,
+      websiteId: params.wid
+     };
+
+     await Axios.post("/api/page", newPage); 
+     history.push(`/user/${params.uid}/website/${params.wid}/page`);
+    };
+  }
+
   return (
     <div>
       <nav className="navbar bg-light navbar-light fixed-top">
